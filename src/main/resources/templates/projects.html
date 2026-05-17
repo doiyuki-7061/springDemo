@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>プロジェクト一覧</title>
+</head>
+<body>
+<h1>プロジェクト一覧</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>プロジェクト名</th>
+        <th>説明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- コントローラーから受け取ったデータを繰り返し表示 -->
+    <tr th:each="project : ${projectList}">
+        <td th:text="${project.projectId}">1</td>
+        <td th:text="${project.projectName}">サンプル</td>
+        <td th:text="${project.description}">説明文</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
